@@ -1,0 +1,33 @@
+#!/bin/bash
+echo ----------------------------------------
+echo Welcome to Docker Bash Tools!
+echo -----------------------------------------
+echo This is the CLI tool for working with docker more easier and faster
+sudo systemctl start docker
+sudo systemctl enable docker
+echo
+echo
+while :
+do
+echo Please choose the option number below:
+echo
+echo 1. Check docker status
+echo 2. Docker management tool
+echo 3. Docker running tool
+echo 4. Docker image tool
+echo 5. Docker networking tool
+echo 6. Docker general management tool
+echo 7. Docker plugin management tool
+echo 0. Stop docker and exit
+echo
+echo
+echo Enter your option:
+read option
+echo
+case $option in
+	
+
+	1) sudo systemctl status docker;;
+	0) sudo systemctl stop docker &&  break;;
+esac
+done
