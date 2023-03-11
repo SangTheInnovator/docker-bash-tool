@@ -1,0 +1,27 @@
+#!/bin/bash
+
+echo -----General Management-----
+echo Choose you options below:
+echo a. Login into Docker Registry
+echo b. Log out of a Docker Registry
+echo c. Show the version of the local Docker installation
+echo d. Display information about the system
+echo e. Remove unused images, containers and networks
+echo f. Exit
+echo -----------------------------
+while :
+do
+echo
+echo
+echo Enter your option:
+read option
+echo
+case $option in 
+	a) sudo docker login;;
+	b) sudo docker logout;;
+	c) sudo docker version;;
+	d) sudo docker info;;
+	e) sudo docker system prune;;
+	f) break;;
+esac
+done

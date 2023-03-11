@@ -1,0 +1,43 @@
+#!/bin/bash
+
+echo -----Container Management-----
+
+echo Choose the options:
+echo a. List the running containers
+echo b. List all the containers, both running and stopped
+echo c. Create a container without starting it
+echo d. Create an interactive container with pseudo-TTY
+echo e. Rename a container
+echo f. Remove a container
+echo g. View logs for running container
+echo 
+echo
+echo 
+while :
+do : 
+echo '>>'
+read  option
+case $option in
+
+	a) sudo docker ps;;
+	b) sudo docker ps -a;;
+	c) echo Enter image id/name:
+	   read image
+ 	   sudo docker create $image;;
+	d) echo Enter image id/name:
+	   read image
+	   sudo docker create -it $image;;
+	e) echo Enter container name:
+	   read container
+	   echo Enter new container name:
+	   read new_container
+	   sudo docker rename $container $new_container;;
+	f) echo Enter container name:
+	   read container
+	   sudo docker rm -f $container;;
+	g) echo Enter container name is running:
+	   read container
+   	   sudo docker logs $container;;
+	0) break;;
+esac
+done
