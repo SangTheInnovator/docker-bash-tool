@@ -28,6 +28,12 @@ case $option in
 	
 
 	1) sudo systemctl status docker;;
+	2) ./management;;
+	3) ./running;;
+	4) ./image;;
+	5) ./networking;;
+	6) ./general-management;;
+	7) ./plugin-management;;
 	0) sudo systemctl stop docker &&  break;;
 esac
 done
